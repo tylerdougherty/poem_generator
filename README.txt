@@ -1,0 +1,10 @@
+Tyler Dougherty
+Poetry Generation
+
+For this project I focused on poetry generation using a statistical analysis of a corpus of writings as well as a library of rhyming and syllables counting methods. For most of these I initially used the built-in NLTK options for doing this, but after I time I came to realize that they were just too slow and inefficient so I found another implementation of the CMU Dictionary. This alternate implementation works much faster by using a double indirection; instead of storing the rhymes for each word, it uses words as keys in a dictionary that points to another dictionary with rhyming word lists. It works something like this: {key, value}:   {word, rhyme} -> {rhyme, word list}. If you want to know more you can find the author's explanation here: http://rhyme.sourceforge.net/how.html.
+
+Since my walk-through, I have created a large corpus of poetry from which to draw my ngrams as well as implementing the rhyming library spoken of above. This has sped up the program considerably, so that it now run reasonably quickly (< 1 minute in some cases). I also added the capability of modifying the rhyme scheme to make a more dynamic poem and allowing individual syllable counts for each line. Compiled in 'goodPoems.txt' you can find a number of the best poems that the program has generated.
+
+There is not a lot of information out there about specific ways to accomplish this task, but I drew a lot of inspiration from this blog post: http://ryanheuser.org.
+
+To run this python program, one must have installed both GNU DBM (http://www.gnu.org.ua/software/gdbm/) and the Rhyming Dictionary (http://rhyme.sourceforge.net) with the rhyme files in the default locations (/usr/share/rhyme/). I have included the necessary files in the project directory now, so the program should be able to be run directly from there with no additional work. Python version 2.7.
