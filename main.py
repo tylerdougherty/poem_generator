@@ -1,27 +1,26 @@
 # This file is the starting file for a rhyming program using NLTK.
 
+import semidbm
 import random
-import string
 import time
 
-import dbm
 from nltk.tokenize import RegexpTokenizer
 
 # Open the rhyming database
-syllablesDB = dbm.open('words.db')
-rhymesDB = dbm.open('rhymes.db')
+syllablesDB = semidbm.open('words.db')
+rhymesDB = semidbm.open('rhymes.db')
 
 
 def rhyme(word, count):
     """Returns a list of all the words that rhyme with 'word' with 'count' number for syllables."""
     # start = time.time() #####
     try:
-        wordSyllables = string.split(syllablesDB[string.upper(word)])[0]
+        wordSyllables = syllablesDB[word.upper()].split()[0]
         # print wordSyllables ###
-        wordRhymes = string.split(rhymesDB[wordSyllables])
-        wordRhymes.remove(string.upper(word))
+        wordRhymes = rhymesDB[wordSyllables].split()
+        wordRhymes.remove(word.upper())
         # print wordRhymes ###
-        backlist = [string.lower(x) for x in wordRhymes if count == 0 or string.split(syllablesDB[x])[1] == count]
+        backlist = [x.lower() for x in wordRhymes if count == 0 or syllablesDB[x].split()[1] == count]
     except:
         backlist = []
     # print 'rhyme: '+str(time.time() - start) #####
@@ -49,7 +48,7 @@ def rhymesWith(word1, word2):
 def numSyllables(word):
     """Returns the number of syllables in 'word'."""
     try:
-        return int(string.split(syllablesDB[string.upper(word)])[1])
+        return int(syllablesDB[word.upper()].split()[1])
     except:
         return 0
 
@@ -74,7 +73,7 @@ def transitionTables(words):
 # The words that should not end the line
 badstring = '''to the for so and with of in but my it i a o oh can how
 			at thou you no because your or she he'''
-badwords = string.split(badstring)
+badwords = badstring.split()
 
 
 def babble(length, seed, target, dictionary):
@@ -95,15 +94,15 @@ def babble(length, seed, target, dictionary):
 
     while True:
         sentence = [seed[0], seed[1]]
-        currentSyllables = 0
-        while currentSyllables < length:
+        current_syllables = 0
+        while current_syllables < length:
             possibilities = dictionary[(sentence[-2], sentence[-1])]
             sentence.append(possibilities[random.randrange(0, len(possibilities))])
-            currentSyllables += numSyllables(sentence[-1])
+            current_syllables += numSyllables(sentence[-1])
         # print sentence, currentSyllables
 
         if sentence[-1] not in badwords:
-            if currentSyllables == length and (target == '' or sentence[-1] in rhymes):
+            if current_syllables == length and (target == '' or sentence[-1] in rhymes):
                 # for x in sentence:
                 # 	print x, numSyllables(x)
 
@@ -120,33 +119,33 @@ def poem(corpus, dictionary):
     """Generates a poem."""
 
     ##########################################
-    ###    EDIT HERE TO CHANGE THE POEM    ###
+    #      EDIT HERE TO CHANGE THE POEM      #
     ##########################################
-    rhymeScheme = ['A', 'B', 'A', 'B']  # The rhyme scheme
-    rhymeDefinitions = {}  # Stores the rhyme sounds for each scheme
-    poemSyllables = [8, 9, 10, 9]  # Number of syllables per line
+    rhyme_scheme = ['A', 'B', 'A', 'B']  # The rhyme scheme
+    rhyme_definitions = {}  # Stores the rhyme sounds for each scheme
+    poem_syllables = [8, 9, 10, 9]  # Number of syllables per line
     # syllablesPerLine = 10
 
     poem = ['i', 'say']
     # poem = ['the', 'mountain']
-    poemLines = [[poem[0], poem[1]]]
-    for i in range(len(rhymeScheme)):
-        pattern = rhymeScheme[i]
+    poem_lines = [[poem[0], poem[1]]]
+    for i in range(len(rhyme_scheme)):
+        pattern = rhyme_scheme[i]
         target = ''
-        if pattern in rhymeDefinitions:
-            target = rhymeDefinitions[pattern]
-        sentence = babble(poemSyllables[i], (poem[-2], poem[-1]), target, dictionary)
+        if pattern in rhyme_definitions:
+            target = rhyme_definitions[pattern]
+        sentence = babble(poem_syllables[i], (poem[-2], poem[-1]), target, dictionary)
         # sentence = babble(syllablesPerLine, (poem[-2], poem[-1]), target, dictionary)
         if not sentence:
             return []
-        if pattern not in rhymeDefinitions:
-            rhymeDefinitions[pattern] = sentence[-1]
+        if pattern not in rhyme_definitions:
+            rhyme_definitions[pattern] = sentence[-1]
         # print sentence
         poem += sentence
-        poemLines.append(sentence)
+        poem_lines.append(sentence)
 
         print(i)
-    return poemLines
+    return poem_lines
 
 
 # Not used in current implementation
@@ -165,16 +164,16 @@ tokenizer = RegexpTokenizer(r'[A-Za-z\']+')  # Create a regex tokenizer
 file = open('poemCorpus.txt').read()  # Open and read the file
 fileWords = tokenizer.tokenize(file)  # Tokenize the file
 
-#### Questionable to remove words not in the rhymer; may revert this if it has adverse effects
-corpus = [string.lower(a) for a in fileWords if string.upper(a) in syllablesDB]  # Convert all the tokens to lowercase
+# TODO: Questionable to remove words not in the rhymer; may revert this if it has adverse effects
+full_corpus = [a.lower() for a in fileWords if a.upper() in syllablesDB]  # Convert all the tokens to lowercase
 
-upTable, downTable = transitionTables(corpus)  # Generate trigram transition tables
+upTable, downTable = transitionTables(full_corpus)  # Generate trigram transition tables
 
 # Generate poems until we have a valid one
 print('...')
 p = []
 while not p:
-    p = poem(corpus, upTable)
+    p = poem(full_corpus, upTable)
     print('...')  # Add some indication of progress
 
 # Print the lines of the poem space-separated
