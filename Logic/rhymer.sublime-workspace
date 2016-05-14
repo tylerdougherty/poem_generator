@@ -1,0 +1,360 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"syll",
+				"syllablesPerLine"
+			],
+			[
+				"sylla",
+				"syllablesDB"
+			],
+			[
+				"rand",
+				"randrange  (function)"
+			],
+			[
+				"ran",
+				"random"
+			],
+			[
+				"lower",
+				"lowerWords"
+			],
+			[
+				"trans",
+				"transitionTables"
+			],
+			[
+				"rhy",
+				"rhymesLookup"
+			],
+			[
+				"num",
+				"numSyllables"
+			],
+			[
+				"rhym",
+				"rhymeStrength"
+			],
+			[
+				"low",
+				"lowerWords"
+			],
+			[
+				"bible",
+				"bibleFile"
+			],
+			[
+				"tok",
+				"tokenize"
+			],
+			[
+				"to",
+				"tokenize"
+			],
+			[
+				"W3",
+				"W3_6"
+			],
+			[
+				"W5",
+				"W5_6"
+			],
+			[
+				"W1",
+				"W1_6"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"selected_items":
+		[
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"IN",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"git in",
+				"Git: Init"
+			],
+			[
+				"dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"enab",
+				"Package Control: Enable Package"
+			],
+			[
+				"d",
+				"Package Control: Disable Package"
+			],
+			[
+				"dele",
+				"Package Control: Disable Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"package control in",
+				"Package Control: Install Package"
+			],
+			[
+				"ssob",
+				"Set Syntax: Objective-C"
+			]
+		],
+		"width": 754.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/tylerdougherty/Documents/workspace/AI"
+	],
+	"file_history":
+	[
+		"/Users/tylerdougherty/Workspaces/CS352/hw01.pov",
+		"/Users/tylerdougherty/Oracle/instantclient_11_2/glogin.sql",
+		"/Users/tylerdougherty/Oracle/instantclient_11_2/tnsnames.ora",
+		"/Users/tylerdougherty/Documents/workspace/AI/poemCorpus.txt",
+		"/Users/tylerdougherty/Documents/workspace/AI/goodPoems.txt",
+		"/Users/tylerdougherty/Documents/workspace/AI/README.txt",
+		"/Users/tylerdougherty/Documents/workspace/AI/main.py",
+		"/Users/tylerdougherty/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/tylerdougherty/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/tylerdougherty/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/tylerdougherty/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/tylerdougherty/Documents/workspace/AI/kjv.txt",
+		"/Users/tylerdougherty/Library/Application Support/Sublime Text 3/Packages/User/Side Bar.sublime-settings",
+		"/Users/tylerdougherty/Documents/workspace/AI/rhymer.sublime-project",
+		"/Users/tylerdougherty/Documents/workspace/AI/test.py",
+		"/Users/tylerdougherty/Library/Application Support/Sublime Text 3/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
+		"/Users/tylerdougherty/Library/Application Support/Sublime Text 3/Packages/User/SublimeCodeIntel.sublime-settings",
+		"/Users/tylerdougherty/Library/Application Support/Sublime Text 3/Packages/SideBarEnhancements/Side Bar.sublime-settings",
+		"/Users/tylerdougherty/Dropbox/College/CS/262/homework13/userdoc.txt",
+		"/Users/tylerdougherty/Dropbox/College/CS/344/lab13/quiestions.txt",
+		"/Users/tylerdougherty/Documents/workspace/cs344/homework12/blocks.pl",
+		"/Users/tylerdougherty/Documents/workspace/cs344/homework12/gcd.pl",
+		"/Users/tylerdougherty/Documents/workspace/cs344/homework12/potter.pl",
+		"/Users/tylerdougherty/Documents/workspace/cs344/homework12/siblings.txt",
+		"/Users/tylerdougherty/Documents/workspace/cs344/lab12/lpn_ex5_3.pl",
+		"/Users/tylerdougherty/Dropbox/College/CS/195:295/Bubble Machine Learning.txt",
+		"/Users/tylerdougherty/Dropbox/College/CS/195:295/Bubble Machine Learning",
+		"/Users/tylerdougherty/Documents/workspace/cs344/lab12/questions.txt",
+		"/Users/tylerdougherty/Documents/workspace/cs344/lab12/lpn_ex4_5.pl",
+		"/Users/tylerdougherty/Documents/workspace/cs344/lab12/lpn_ex3_2.pl",
+		"/Users/tylerdougherty/Documents/workspace/cs344/lab11/lpn_ex1_4.pl",
+		"/Users/tylerdougherty/Documents/workspace/cs344/lab11/lpn_ex1_5.txt",
+		"/Users/tylerdougherty/Documents/workspace/cs344/lab11/ex11_1.txt",
+		"/Users/tylerdougherty/Documents/workspace/cs344/lab11/lpn_ex2_1.pl",
+		"/Users/tylerdougherty/Documents/workspace/cs344/lab11/ex11_2.txt",
+		"/Users/tylerdougherty/Documents/workspace/cs344/homework11/lpn_ex2_4.pl",
+		"/Users/tylerdougherty/Documents/workspace/cs344/homework11/ex3.pl",
+		"/Users/tylerdougherty/Documents/workspace/cs344/homework11/ex3_b.pl"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 106.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"hall",
+			"colo",
+			"+b",
+			"')]\n",
+			"bible",
+			"token",
+			"tokens",
+			"b",
+			"gnralgnrlknrlvknflk",
+			"fnalf knaslgk nsklgnsald kfnsalkfnew\n",
+			"kfnsalkfnew",
+			"knaslgk",
+			"fnalfknaslgknsklgnsaldkfnsalkfnew",
+			"hello there",
+			"there",
+			"hello",
+			"dl"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 38.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 98.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "rhymer.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"last_automatic_layout":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		]
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 155.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
