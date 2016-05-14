@@ -12,12 +12,12 @@ rhymesDB = semidbm.open('rhymes.db')
 
 
 def rhyme(word, count):
-    """Returns a list of all the words that rhyme with 'word' with 'count' number for syllables."""
+    """Returns a list of all the words that rhyme with 'word' with 'count' number of syllables."""
     # start = time.time() #####
     try:
-        wordSyllables = syllablesDB[word.upper()].split()[0]
+        wordSyllables = syllablesDB[word.upper()].decode().split()[0]
         # print wordSyllables ###
-        wordRhymes = rhymesDB[wordSyllables].split()
+        wordRhymes = [word.decode() for word in rhymesDB[wordSyllables].split()]
         wordRhymes.remove(word.upper())
         # print wordRhymes ###
         backlist = [x.lower() for x in wordRhymes if count == 0 or syllablesDB[x].split()[1] == count]
@@ -165,7 +165,8 @@ file = open('poemCorpus.txt').read()  # Open and read the file
 fileWords = tokenizer.tokenize(file)  # Tokenize the file
 
 # TODO: Questionable to remove words not in the rhymer; may revert this if it has adverse effects
-full_corpus = [a.lower() for a in fileWords if a.upper() in syllablesDB]  # Convert all the tokens to lowercase
+syllables_keys = [s.decode() for s in syllablesDB.keys()]
+full_corpus = [a.lower() for a in fileWords if a.upper() in syllables_keys]  # Convert all the tokens to lowercase
 
 upTable, downTable = transitionTables(full_corpus)  # Generate trigram transition tables
 
